@@ -1,0 +1,27 @@
+Source: pmb
+Section: web
+Priority: optional
+Maintainer: Equipo LliureX <lliurex@gva.es>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+Homepage: http://www.sigb.net/
+
+Package: pmb
+Architecture: any
+Depends: ${misc:Depends}, apache2, libapache2-mod-php7.4, mariadb-server, mariadb-client, php7.4-bz2, php7.4-common, php7.4-curl, php-fpdf, php7.4-gd, php7.4-intl, php7.4-json, php7.4-mbstring, php7.4-mysql, php-soap, php7.4-xml, php7.4-xsl, php7.4-yaz, php7.4-zip, yaz    
+Description: Integrated Library Management System
+ PMB (7.3.7) is an entirely free ILS (Integrated Library management System).
+ PMB is based on web technology. It requires an HTTP server (such as Apache,
+ but this is not an obligation), the MySQL database and the PHP language.
+ The main functions of PMB are :
+  * Supporting the UNIMARC format
+  * Authorities management (authors, publishers, series, subjects...)
+  * Management of loans, holds, borrowers...
+  * A user-friendly configuration
+  * The ability to import full bibliographic records
+  * A user-friendly OPAC integrating a browser
+  * Loans management with a module designed to serve even the very
+  * small establishments
+  * Serials management
+  * Simple administration procedures that can be handled easily even
+  * by the library staff...
