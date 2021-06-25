@@ -1,0 +1,81 @@
+@charset "utf-8";
+ /* +--------------------------------------------------------------------------+
+// 2015 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// +-------------------------------------------------+
+// $Id: fontAcontent.css,v 1.1.2.1 2020/10/09 15:04:24 tgrassin Exp $ */
+
+/*------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------*/
+
+#bandeau .infosBandeau .liensExtrn li:before,
+#footer .Ancre a:before,
+.itemAbrege  p.lirePlus:after,
+.itemAbrege  p.lirePlus a:after,
+.MenuHoriz .Nav>li .SousNav li a:after,
+.listBreves>.itemAbrege>a:after,
+.listBibli>.itemAbrege>a:after,
+.listEtageres>.itemAbrege>a:after,
+.fluxRSS>.itemAbrege>a:after,
+#search:after,
+#search:before,
+.fa-plus-square:before, 
+.fa-arrow-right:before, 
+#search form:after,
+#account h4:before, 
+#search form:before,
+.search_advanced_link a:before,
+ul.search_tabs li#current:before,
+.listBreves .itemAbrege>ul li:after,
+.SliderHoriz .SliderNot .bx-prev:before,
+.SliderHoriz .SliderNot .bx-next:before,
+#lienHistorique a:before,
+.fluxRSS>.itemAbrege a:after,
+.itemSolo h4:after,
+.listProd>h3:after,
+.liensBib li a:before, 
+.sousRubAccordion h3.uk-accordion-title:after, 
+.sousRubAccordion h3.uk-accordion-title.uk-active:after,
+.listEtageresRub>h3:after,
+.buttonMenu .fa-bars:before, 
+.fluxRSSRub>.itemAbrege h4 a:after,
+#facette_wrapper th:after,
+.datesEven:before,
+.infosArt>h3:after,
+.fleche>a:after,
+.listGenVeille>.itemAbrege h4:before, 
+.site_map_Nav>li>a:before, 
+.lienFlux a:after,
+.accesFlux a:before,
+.SliderVertic .bx-wrapper .bx-prev:after,
+.SliderVertic .bx-wrapper .bx-next:after,
+.accesFlux a:after,
+.openMenu .menuVertic .Nav li a#empr_logout_lnk:after, 
+.listeFluxRss a:after,
+#lienBouton a:after,
+.imgXL a:after,
+.rss_articles p i:before,
+#aut_details_liste>h3:after,
+#lienCnx a:before,
+.research_inputs:after,
+#lienDcnx a:before,
+.SliderNot.SliderHoz .bx-wrapper .bx-prev:after,
+.SliderNot .bx-wrapper .bx-next:after,
+#navigator > table > tbody > tr > td> a span:before,
+#facette h3:before, 
+#lvl1 h3:before,
+#facette_compare span.facette_compare:before,
+.noticesEtagere>a:after,
+.liensExtrn li a:after,
+.aut_details_liste_titre:after,
+#facette_wrapper > form > h3 > table > tbody > tr > td > a:before,
+.search_advanced_link:before,
+.search_other_link a:before {
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+	text-decoration: inherit;
+	-webkit-font-smoothing: antialiased;
+	width:1.3em;
+} 

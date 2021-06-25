@@ -1,0 +1,26 @@
+{% extends 'gabarit.html' %}
+
+<!-- $Id: concept.html,v 1.1.2.1 2020/10/09 15:04:23 tgrassin Exp $ -->
+
+{% block header %}
+		<h3><span>{{ authority.isbd }}</span></h3>
+	{% endblock %}
+
+{% block aut_see %}
+	<div class="conceptlevel2">
+		{{ block.super }}
+	</div>
+{% endblock %}
+	
+{% block title %}
+{% endblock %} 
+
+{% block details %}
+{% endblock %}
+{% block map %}
+	{% if authority.map.map %}
+		<div class="map_notice">
+			{{ authority.map.map }}
+		</div>
+	{% endif %}
+{% endblock %}

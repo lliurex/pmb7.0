@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- $Id: sort.xml,v 1.1.4.4 2020/10/15 12:53:19 qvarin Exp $ -->
+<sort>	
+	<field name="pertinence" type="num" typefield="internal" id="6">
+		<tablefield>pert</tablefield>
+	</field>
+	<!--Date de Parution-->
+	<field name="date_parution" type="text" typefield="select" id="19">
+		<table>
+			<filter>(ufield = '902' and usubfield='b')</filter>
+			<tablefield>i_value</tablefield>
+		</table>
+	</field>
+	
+	<!--Titre-->
+	<field name="title" type="text" typefield="select" id="1">
+		<table>
+			<filter>(ufield = '200' and usubfield='a')</filter>
+			<tablefield>value</tablefield>
+		</table>
+	</field>
+	
+	<!--Langues de la publication-->
+	<field name="langue_publication_query" type="text" typefield="select" id="3">
+		<table>
+			<filter>(ufield = '101' and usubfield='a')</filter>
+			<tablefield>i_value</tablefield>
+		</table>
+	</field>
+	
+	<!--Complément du titre-->
+	<field name="240" type="text" typefield="select" id="4">
+		<table>
+			<filter>(ufield = '200' and usubfield='e')</filter>
+			<tablefield>value</tablefield>
+		</table>
+	</field>
+	
+	<!--Nom de l'éditeur-->
+	<field name="search_extended_publisher_name" type="text" typefield="select" id="5">
+		<table>
+			<filter>(ufield = '210' and usubfield='c')</filter>
+			<tablefield>i_value</tablefield>
+		</table>
+	</field>
+	
+	<!--Mots-clés-->
+	<field name="keywords" type="text" typefield="select" id="6">
+		<table>
+			<filter>(ufield = '610' and usubfield='a')</filter>
+			<tablefield>i_value</tablefield>
+		</table>
+	</field>
+	
+	<!--Nom de l'auteur-->
+	<field name="search_extended_author_name" type="text" typefield="select" id="7">
+		<table>
+			<filter>(ufield = '700' and usubfield='a')</filter>
+			<tablefield>i_value</tablefield>
+		</table>
+		<table>
+			<filter>(ufield = '701' and usubfield='a')</filter>
+			<tablefield>i_value</tablefield>
+		</table>
+	</field>
+	
+	<!--Résumé-->
+	<field name="source_enrichment_resume" type="text" typefield="select" id="9">
+		<table>
+			<filter>(ufield = '330' and usubfield='a')</filter>
+			<tablefield>i_value</tablefield>
+		</table>
+	</field>
+	
+	<!--Note général-->
+	<field name="note_generale_search" type="text" typefield="select" id="10">
+		<table>
+			<filter>(ufield = '300' and usubfield='a')</filter>
+			<tablefield>i_value</tablefield>
+		</table>
+	</field>
+	
+</sort>

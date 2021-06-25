@@ -1,0 +1,46 @@
+Modifications apportées à ARC2
+
+26/07/2013 : 
+Modification de arc2/store/ARC2_Store.php
+Fonction createDBCON
+Ajout paramètre new_link = true en ligne 51 pour mysql_connect 
+
+02/09/2020
+Modification de arc2/store/ARC2_Store.php
+Fonction getTermID
+Correction requete effectuee 2x en ligne 531
+> if (($rs = $this->queryDB($sql, $con)) && mysqli_num_rows($rs)) {
+devient : 
+> if ($rs  && mysqli_num_rows($rs)) {
+
+04/09/2020
+Modification de arc2/store/ARC2_Store.php
+Fonction getTermID
+mise en cache valeur si égale à 0 en ligne 548
+> if ($r && (strlen($val) < 100)) {
+devient : 
+> if (/*$r && */(strlen($val) < 100)) {
+
+21/09/2020
+correction mise en cache 
+Modification de getTermId dans arc2/store/ARC2_Store.php
+ligne 508 :  
+function getTermID($val, $term = '',$dont_cache = false) {
+ligne 548 :  
+if ($dont_cache == false && /*$r && */(strlen($val) < 100)) {
+
+Modification des appels à getTermId dans arc2/store/ARC2_StoreDeleteQueryHandler
+ligne 67 :
+if ($g_id = $this->getTermID($g, 'g', true)) {
+ligne 87 :
+if ($g_id = $this->getTermID($g, 'g', true)) {
+ligne 101 :
+$term_id = $this->getTermID($t[$term], $term, true);
+ligne 108 :
+$q .= ($q ? ' AND ' : '') . 'T.o_lang_dt=' . $this->getTermID($o_lang_dt, 'lang_dt', true);
+
+Modification de getTermId dans arc2/store/ARC2_StoreQueryHandler
+ligne 30 :
+function getTermID($val, $term = '', $dont_cache = false) {
+  return $this->store->getTermID($val, $term, $dont_cache);
+}

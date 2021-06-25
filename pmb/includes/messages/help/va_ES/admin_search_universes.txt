@@ -1,0 +1,2 @@
+<h2>Cerca segmentada</h2>
+<p>Ací trobarà les opcions per a configurar les cerques segmentades de l'OPAC.</p>

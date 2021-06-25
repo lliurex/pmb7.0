@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+/* +--------------------------------------------------------------------------+
+// 2013 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// +-------------------------------------------------+
+// $Id: glincheComplement.css,v 1.1.2.1 2020/10/09 15:04:23 tgrassin Exp $ */
+/*------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
+
+form [id^="docnum_docnum"] input[value="Chercher"], 
+.contribution_resource_template, 
+input[value="Chercher"].bouton {
+    display:none;
+}
+
+.tundra .contributionDivContainer .dijitTabContainerTop-dijitContentPane .dijitTabContainerTop-tabs {
+    display:none;
+}
