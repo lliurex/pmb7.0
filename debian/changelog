@@ -1,3 +1,9 @@
+pmb (7.3.9+lliurex3) focal; urgency=medium
+
+  * Clean z_bib and z_attr tables to avoid errors in z39.50 search
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Tue, 29 Jun 2021 16:10:36 +0200
+
 pmb (7.3.9+lliurex2) focal; urgency=medium
 
   * Fixed database schema
