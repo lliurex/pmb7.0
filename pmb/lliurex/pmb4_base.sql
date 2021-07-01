@@ -14670,7 +14670,7 @@ INSERT INTO `z_bib` VALUES (1,'Biblioteca Nacional','CATALOG','sigb.bne.es','220
 (3,'Congreso de los Diputados','CATALOG','biblioteca.congreso.es','2100','ABSYSBCD','USMARC','','','',''),
 (4,'REBECA','CATALOG','catalogos.mecd.es','220','ABNET_REBECA','ISO 8859-1','','','',''),
 (5,'REBIUN','CATALOG','rebiun.crue.org','210','ABSYSREBIUN','USMARC','','','',''),
-(7,'Red de Bibliotecas del CSIC','CATALOG','eu00.alma.exlibrisgroup.com','210','34CSIC_INST','MARC21','','','',''),
+(6,'Red de Bibliotecas del CSIC','CATALOG','eu00.alma.exlibrisgroup.com','210','34CSIC_INST','MARC21','','','',''),
 (7,'Catálogo Colectivo Bibliotecas Públicas','CATALOG','catalogos.mecd.es','212','ABNET_DB','ISO 8859-1','','','','');
 
 /*!40000 ALTER TABLE `z_bib` ENABLE KEYS */;
