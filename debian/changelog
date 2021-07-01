@@ -1,3 +1,9 @@
+pmb (7.3.9+lliurex4) focal; urgency=medium
+
+  * Fixed z_bib table
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Thu, 01 Jul 2021 13:36:47 +0200
+
 pmb (7.3.9+lliurex3) focal; urgency=medium
 
   * Clean z_bib and z_attr tables to avoid errors in z39.50 search
