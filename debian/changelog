@@ -1,3 +1,9 @@
+pmb (7.3.9+lliurex5) focal; urgency=medium
+
+  * Fixed a bug when search by ISBN in z39.50
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Tue, 21 Dec 2021 11:33:57 +0100
+
 pmb (7.3.9+lliurex4) focal; urgency=medium
 
   * Fixed z_bib table
