@@ -247,7 +247,8 @@ function load_isbn_ranges() {
 	return $array_isbn_ranges;
 }
 
-function z_formatISBN($isbn,$taille) {
+//----LLIUREX 21/12/2021: Added $taille=""------
+function z_formatISBN($isbn,$taille="") {
 	return formatISBN($isbn,$taille);
 }
 
