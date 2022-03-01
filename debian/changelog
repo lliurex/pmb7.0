@@ -1,3 +1,9 @@
+pmb (7.3.9+lliurex6) focal; urgency=medium
+
+  * Added db_server host in mysqldump command
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Tue, 01 Mar 2022 10:32:49 +0100
+
 pmb (7.3.9+lliurex5) focal; urgency=medium
 
   * Fixed a bug when search by ISBN in z39.50
