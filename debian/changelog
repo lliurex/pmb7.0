@@ -1,3 +1,9 @@
+pmb (7.3.9+lliurex7) focal; urgency=medium
+
+  * Fixed bug in indexation process when notice,editor... is added
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Wed, 13 Apr 2022 17:37:58 +0200
+
 pmb (7.3.9+lliurex6) focal; urgency=medium
 
   * Added db_server host in mysqldump command
