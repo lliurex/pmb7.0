@@ -16,7 +16,10 @@ function init_gen_code_exemplaire($notice_id,$bull_id) {
 // ------------------- LLIUREX 22/02/2018 ------------------------------
 	// original $code_exemplaire = "GEN000000" ----------------------------	
 			$code_exemplaire = "000000000";
+		}else{
+			$code_exemplaire = "000000000";
 		}
+//--------------------FIN LLIUREX-------------------------------------------
 	}
 	return $code_exemplaire;  	   						
 }
