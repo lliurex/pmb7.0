@@ -1,3 +1,9 @@
+pmb (7.3.9+lliurex8) focal; urgency=medium
+
+  * Fixed bug in function to generate cb of book
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Mon, 30 May 2022 13:25:21 +0200
+
 pmb (7.3.9+lliurex7) focal; urgency=medium
 
   * Fixed bug in indexation process when notice,editor... is added
