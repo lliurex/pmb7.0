@@ -1,0 +1,17 @@
+<br>
+<b>CUIDADO, esta herramienta sirve para crear los registros y las autoridades.
+<br>También se actualizarán registros ya existentes.</b>
+<br><br>
+
+El archivo debe estar en formato <b>IBERMARC (REBECA)</b>. El resultado de la búsqueda de registros en la página web<br>
+de <b>Registros Bibliográficos del Ministerio de Cultura y Deporte <a href=https://www.culturaydeporte.gob.es/cultura/areas/bibliotecas/mc/rebeca/descargar-registros.html" target="_blank">https://www.culturaydeporte.gob.es/cultura/areas/bibliotecas/mc/rebeca/descargar-registros.html</a></b><br>
+se puede descargar en un fichero <b>000*.reb</b> o en un fichero <b>000*.txt</b> y cambiarle la extensión a <b>000*.reb</b> para su importación desde PMB.<br>
+<ul>
+<li>La importación se realiza en tres fases :
+<OL>
+<LI>Primero se envía el archivo</LI>
+<LI>Luego se carga </LI>
+<LI>Finalmente se transfieren los registros a la base de datos</LI>
+</OL></li>
+</ul>
+<br><br>
