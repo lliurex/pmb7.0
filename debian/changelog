@@ -1,3 +1,9 @@
+pmb (7.3.9+lliurex10) focal-updates; urgency=medium
+
+  * Disable php.ini configuration in postinstall.
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Wed, 13 Jul 2022 13:23:08 +0200
+
 pmb (7.3.9+lliurex9) focal; urgency=medium
 
   * Fixed bug in form to generate aids call xml.

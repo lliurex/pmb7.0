@@ -14,26 +14,9 @@ case $1 in
 		chmod 2775 /var/lib/pmb/backup/backups
 		chmod 2775 /var/lib/pmb/temp
 
-		# Settings for PMB UPLOAD MAX Size
+		# Settings for PMB
 
 		mkdir -p /etc/lliurex-tokens/
-
-		if [ ! -e /etc/lliurex-tokens/pmb7.0_rev_phpsize ]; then
-			
-			# Setting the lliurex-token for pmb
-			echo " [ PMB 7.0 ] : PHP Upload size fixed to 800MB "
-			echo "PHP Size fixed to 800MB " > /etc/lliurex-tokens/pmb7.0_rev_phpsize
-			date >> /etc/lliurex-tokens/pmb7.0_rev_phpsize
-			
-			# Calling utility
-			bash /usr/share/pmb/www/lliurex/utilidades/phpiniconf.sh --pmb || true
-
-		else
-
-			echo " [ PMB 7.0 ] : PHP Upload has been already set...nothing to do "
-
-		fi
-		
 
 		if [ ! -e /etc/lliurex-tokens/pmb7.0_javascript ]; then
 			
