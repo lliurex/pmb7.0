@@ -3,43 +3,19 @@
 if (stristr($_SERVER['REQUEST_URI'], ".inc.php")) die("no access");
 
 $base_path=".";                            
-$base_auth = "ADMINISTRATION_AUTH";  
+$base_auth = "CIRCULATION_AUTH|ADMINISTRATION_AUTH";  
 $base_title = "\$msg[7]";
 $class_path= "./classes";
 $include_path= "./includes";
 
-//---------------------LLIUREX 12/02/2015 -------------------------
-require_once ("$base_path/includes/init.inc.php");
-//--------------------- FIN LLIUREX 12/02/2015 -------------------------
-require_once("$class_path/notice.class.php");
-require_once("$class_path/expl.class.php");
-require_once("$class_path/indexint.class.php");
-require_once("$include_path/notice_authors.inc.php");
-require_once("$include_path/notice_categories.inc.php");
-//--------------------- LLIUREX 14/03/2016-----------------------
-//require '/usr/share/php/fpdf/fpdf.php';
-//--------------------- FIN LLIUREX 14/03/2016-------------------
-
-//--------------------------LLIUREX 19/12/2018--------------------------
-//------Fixed vars declaration. Added ''-------------------------
-
 define('CONVERSION',(1/25.4));//Conversión inch/mm
 define('COLS_PER_PAGE', 3); // Nº columnas por página
 define('ROWS_PER_PAGE', 8); // Nº filas por página
-//----------------------------LLIUREX 07/03/2018-------------
-//define(BARCODE_HEIGHT, 54); // en pixels
-//define(BARCODE_WIDTH, 175); // en pixels
-//----------------------------FIN LLIUREX 07/03/2018------------
 define('ALIGN', 'C');
 define('LABEL_WIDTH', (70.8*CONVERSION)); // en mm
 define('LABEL_HEIGHT', (36.5*CONVERSION));  // en mm
 define('H_MARGIN', (7*CONVERSION)); // horizontal (izquierda y derecha) margenes de la pagina, en mm
 define('V_MARGIN', (12*CONVERSION)); // vertical (top & bottom) margins of page, in mm
-
-//----------------------------FIN LLIUREX 19/12/2018--------------------
-
-//define(SPACE_BETWEEN_LABELS, ($parametros["SPACE_BETWEEN_LABELS"])*CONVERSION); // espacio horizontal entre etiquetas 
-//define(SPACE_BETWEEN_LABELS_VERTICAL, ($parametros["SPACE_BETWEEN_LABELS_VERTICAL"])*CONVERSION); // espacio vertical entre etiquetas 
 
 function f_rellena_ceros($as_dato) {
 	if(strlen($as_dato)>0 && strlen($as_dato)<9){
@@ -50,30 +26,17 @@ function f_rellena_ceros($as_dato) {
 	
 }
 
-//------------------------LLIUREX 19/12/2018---------------------------------
-//-----Fixed function. Changed ereg_replace by preg_replace
 function str_squeeze($test) {
 
     return trim(preg_replace( '~ + ~', '', $test));
 }
-//-------------------------FIN LLIUREX 19/12/2018------------------------------
-
 
 $codigos=$_GET['codigos'];
-//$codigos=str_replace(" ", "", $codigos);
-//-----------------LLIUREX 07/03/2018-----------
 $per=$_GET['percentaje_combobox'];
-
 
 switch ($codigos){
 
 case '':{
- //---------------------LLIUREX 12/02/2015 -------------------------	
-       //require_once ("$base_path/includes/init.inc.php");
- //---------------------FIN LLIUREX 12/02/215 ----------------------
- //-----------------------LLIUREX 07/03/2018-----------------------	
-	//echo "<center><form class='form-admin' name='form2' ENCTYPE=\"multipart/form-data\" method='get' action=\"./tejuelo.php?codigos=\".$codigos·\"\"><b>$msg[tejuelo]&nbsp;</b><input name='codigos' accept='text/plain' type='text'  size='80'><input align='center' type='button' name='continuar' value='Continuar' onclick='form.submit()'></form></center>";
-
 	echo "<center><form class='form-admin' name='form2' ENCTYPE=\"multipart/form-data\" method='get' action=\"./tejuelo.php\"\"><b>$msg[tejuelo]&nbsp;</b><input name='codigos' accept='text/plain' type='text'  size='80'>";
 	echo "<center><b>$msg[porcentaje_tejuelo]</b>
 	<select name='percentaje_combobox' >
@@ -85,40 +48,25 @@ case '':{
 	<option value='0.5'>50%</option>
 	</select></center>";
 	echo "<input align='center' type='button' name='continuar' value='Continuar' onclick='form.submit()'></form></center>";
-//------------------------FIN LLIUREX 07/03/2018--------------------------
-
 break;}
-
-
 
 default:{
 $matriz=array();
 $base_noheader = 1;
 
-
-//------------------------------LLIUREX 07/03/2018--------------------
 $BARCODE_HEIGHT=(54*$per); // en pixels
 $BARCODE_WIDTH=(175*$per); // en pixels
 $LABEL_WIDTH2=((70.8*CONVERSION)*$per); // en mm
 $LABEL_HEIGHT2=((36.5*CONVERSION)*$per);  // en mm
 $font_size1=10*$per;
 $font_size2=25*$per;
-//--------------------------------FIN LLIUREX 07/03/2018--------------------
-
 
 $codigos=str_squeeze($codigos);
 
 if((strpos($codigos, ",")!== false)) $aux=explode(",",$codigos);
 else $aux=$codigos;
 
-require("$base_path/includes/db_param.inc.php");
-
-//----------------------LLIUREX 19/12/2018-----------------------------------------
-//----Changed calls to database. Used pmb_mysql instead mysql_ -----------------------
-
-
-//$link2 = @mysql_connect(SQL_SERVER, USER_NAME, USER_PASS) OR die("Error MySQL");
-
+require_once ("$base_path/includes/init.inc.php");
 
 if (is_array($aux)) {
 	foreach ($aux as $codi) {
@@ -141,8 +89,8 @@ if (is_array($aux)) {
 	}
 }
 elseif ($aux === "*"){
+		
 		$q ='SELECT expl_cb FROM exemplaires';
-
 		$resultData = @pmb_mysql_query($q, $dbh);
 		if (@pmb_mysql_num_rows($resultData) != 0) {
 
@@ -172,24 +120,10 @@ else {
 
 $size = count($matriz);
 
-//Determinamos margenes de los barcode
-//----------------------LLIUREX 07/03/2018----------------- 
-//$barcode_h_margin = ((LABEL_WIDTH-(BARCODE_WIDTH/72))/2); 
-//$barcode_v_margin = ((LABEL_HEIGHT-(BARCODE_HEIGHT/72))/2);
 $barcode_h_margin = (($LABEL_WIDTH2-($BARCODE_WIDTH/72))/2); 
 $barcode_v_margin = (($LABEL_HEIGHT2-($BARCODE_HEIGHT/72))/2);
-//---------------------FIN LLIUREX 07/03/2018--------------------
-
-
-//----------------LLIUREX 26/02/2018-------------------
-// Se comenta la declaración pq ya se realiza en require_once ("$base_path/includes/init.inc.php");
-// Creamos objeto PDF
-//-----------------------LLIUREX 14/03/2016------------------
-//require '/usr/share/php/fpdf/fpdf.php';
-//----------------------- FIN LLIUREX 14/03/2016-------------
-//--------------- FIN LLIUREX 26/02/2018------------------------
+ob_start();
 $pdf=new FPDF('P','in','A4');
-
 // Metadata
 $pdf->SetAuthor('Lliurex');
 $pdf->SetTitle('Tejuelo Lliurex');
@@ -256,40 +190,6 @@ foreach ($matriz as $exe_cote) {
 			} 
 
 		$matriz2=explode(" ",$cote);
-//--------------------------------LLIUREX 07/03/2018------------------					
-		
-/*
-		$pdf->SetFont('Arial','B',10);
-		$pdf->SetY($y);
-		$pdf->SetX($x);
-		if (strlen($matriz2[0])>6) $align="";
-		else $align="C";
-		$pdf->Cell(LABEL_WIDTH/5, ($barcode_v_margin*1),$matriz2[0],"LT", 0, $align);
-		$pdf->Cell(LABEL_WIDTH-1, ($barcode_v_margin*1),"","TR", 0,'C');
-		$pdf->Ln();
-		$pdf->SetX($x);
-		$pdf->Cell(LABEL_WIDTH/5, ($barcode_v_margin*1),$matriz2[1],"L", 0,'C');
-                $pdf->setFont('barcode',"",25);
-		$pdf->Cell(LABEL_WIDTH-1, ($barcode_v_margin*1),"*".f_rellena_ceros($cb)."*","R", 0,'C');
-		$pdf->SetFont('Arial','B',10);
-		$pdf->Ln();
-		$pdf->SetX($x);
-		$pdf->Cell(LABEL_WIDTH/5, ($barcode_v_margin*1),$matriz2[2],"LB", 0,'C');
-		$pdf->Cell(LABEL_WIDTH-1, ($barcode_v_margin*1),f_rellena_ceros($cb),"BR", 0,'C');
-
-		if (($new_col%COLS_PER_PAGE)==0) {
-			$x = H_MARGIN;
-			$y += LABEL_HEIGHT-0.03;
-			$new_row++;
-			$new_col=1;
-		} else {
-			$new_col++;
-			$x += LABEL_WIDTH-0.10;
-			}
-
-
-		}
-		*/
 		$pdf->SetFont('Arial','B',$font_size1);
 		$pdf->SetY($y+((LABEL_HEIGHT-$LABEL_HEIGHT2)/3));
 		$pdf->SetX($x+((LABEL_WIDTH-$LABEL_WIDTH2)/3));
@@ -322,30 +222,16 @@ foreach ($matriz as $exe_cote) {
 
 
 		}
-	//-------------------------FIN LLIUREX 07/03/2018-----------------	
 
 		@pmb_mysql_free_result($resultData);
 
 	}else continue;
-	//} else continue;
 
 }
-
-
-
 // Desconexión de la Base de Datos
 pmb_mysql_close($dbh);
-
-//--------------------FIN LLIUREX 19/12/2018------------------------------
-
-// Limpiar (ELIMINAR) el búfer de salida y Deshabilitar el Almacenamiento en El Mismo -12/02/2015
 ob_end_clean();
-
 $pdf->Output('tejuelo.pdf', 'D'); // Salida es un pdf descargable 
-
-
 }
-
-
 }
 ?>
