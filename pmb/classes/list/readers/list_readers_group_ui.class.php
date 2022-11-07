@@ -130,4 +130,13 @@ class list_readers_group_ui extends list_readers_ui {
 	
 		return $base_path.'/circ.php?categ='.$categ.'&sub='.$sub.'&groupID='.$groupID;
 	}
+
+	/*---------INI 07/11/2022 LLIUREX FIXED BUG WITH PAGER-------*/
+
+	protected function init_default_pager(){
+		parent::init_default_pager();
+		$this->pager['nb_per_page'] = 10000;
+
+	}
+	/*----------FIN 07/11/2022 LLIUREX--------------------------*/
 }
