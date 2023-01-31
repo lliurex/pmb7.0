@@ -1,3 +1,9 @@
+pmb (7.3.9+lliurex13) focal; urgency=medium
+
+  * Fixed script to import users to check category
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Tue, 31 Jan 2023 11:21:22 +0100
+
 pmb (7.3.9+lliurex12) focal; urgency=medium
 
   * Fixed bug in groups list
