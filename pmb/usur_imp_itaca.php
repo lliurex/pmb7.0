@@ -19,7 +19,7 @@ function check_user_category($dbh,$tipo_user){
 	$sql_comp= "SELECT `empr_categ`.`id_categ_empr` FROM `empr_categ` WHERE `empr_categ`.`libelle` like '%".$categDescriptionRef."%'";
 	$resul_comp= @pmb_mysql_query($sql_comp, $dbh);
 	if (@pmb_mysql_num_rows($resul_comp) == 0){
-		$sql_insert= "INSERT INTO empr_categ (libelle,duree_adhesion) VALUES ('" . $categDescriptionValue . "','365')";
+		$sql_insert= "INSERT INTO empr_categ (libelle,duree_adhesion) VALUES ('" . $categDescriptionValue . "','3650')";
 		$resul_insert= @pmb_mysql_query($sql_insert, $dbh);
 		$resul_comp= @pmb_mysql_query($sql_comp, $dbh);
 		if (@pmb_mysql_num_rows($resul_comp) == 1){
