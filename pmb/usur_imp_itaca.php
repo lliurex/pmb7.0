@@ -28,7 +28,7 @@ function check_user_category($dbh,$tipo_user){
 		}
 	}else{
 		if (@pmb_mysql_num_rows($resul_comp) == 1){
-			$currentValue =mysql_fetch_array($resul_comp);
+			$currentValue =pmb_mysql_fetch_array($resul_comp);
 			$emprCateg=intval($currentValue['id_categ_empr']);
 		}
 	}
