@@ -1,3 +1,9 @@
+pmb (7.3.9+lliurex15) focal; urgency=medium
+
+  * Fixed bug in listado-carnets.inc.php
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Mon, 23 Oct 2023 10:04:24 +0200
+
 pmb (7.3.9+lliurex14) focal; urgency=medium
 
   * Fixed script to import users from ITACA
