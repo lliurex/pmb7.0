@@ -96,7 +96,9 @@ function f_rellena_ceros($as_dato) {
 }
 
 function getCodesRango($min, $max, $dbh) {
-	$matriz=argetUsersCodesray();
+//---------------INI LLIUREX 23/10/2023: Fixed matriz declaration -------
+	$matriz=array();
+//---------------FIN LLIUREX 23/10/2023----------------------------------
 	$query = "SELECT empr_cb FROM `empr`  WHERE convert(`empr_cb`, unsigned) BETWEEN " . $min . " AND " . $max;
 	//$query = "SELECT empr_cb FROM empr WHERE empr_cb >= '" . $min . "' AND empr_cb<='" . $max . "'";
 
